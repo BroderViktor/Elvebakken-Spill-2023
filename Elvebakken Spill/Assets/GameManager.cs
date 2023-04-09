@@ -5,16 +5,19 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Transform gamePos;
-    private void Start()
+    public Transform playerPos;
+    public virtual void Start()
     {
+        transform.position = gamePos.transform.position;
+
         TeleportPlayer();
     }
     public void TeleportPlayer()
     {
         CharacterController charController = FindObjectOfType<CharacterController>();
         charController.enabled = false;
-        charController.transform.position = gamePos.position;
-        charController.transform.rotation = gamePos.rotation;
+        charController.transform.position = playerPos.position;
+        charController.transform.rotation = playerPos.rotation;
         charController.enabled = true;
     }
 }

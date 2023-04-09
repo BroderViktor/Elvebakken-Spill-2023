@@ -8,12 +8,10 @@ public class StairManager : GameManager
     public GameObject stairPrefab;
     public GameObject finalStairPrefab;
     public int lenght;
-    private void Start()
+    public override void Start()
     {
-        print("stairgame started");
-        MapGen();
-        StartPlatform.transform.position = gamePos.position;
-        TeleportPlayer();
+        base.Start();
+
     }
     void MapGen()
     {
@@ -21,7 +19,7 @@ public class StairManager : GameManager
         {
             Vector3 pos = new Vector3(-stairPrefab.transform.localScale.x * 2 * i, stairPrefab.transform.localScale.z * 2 * i, 0) ;
             pos += gamePos.position;
-            if (i == lenght - 1) Instantiate(finalStairPrefab, pos, stairPrefab.transform.rotation);
+            if (i == lenght - 1) Instantiate(finalStairPrefab, pos, stairPrefab.transform.rotation, transform);
             else Instantiate(stairPrefab, pos, stairPrefab.transform.rotation, transform);
         }
     }
