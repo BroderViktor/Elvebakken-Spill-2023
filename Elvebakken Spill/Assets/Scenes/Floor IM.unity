@@ -169,7 +169,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9bb25d4e16711c34d8718710431d7132,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.96
+      value: 12.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9bb25d4e16711c34d8718710431d7132,
         type: 3}
@@ -291,6 +291,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: a6f6709cf46924e429e91b54f4bfdd15,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a6f6709cf46924e429e91b54f4bfdd15,
         type: 3}
       propertyPath: m_Name
@@ -353,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 662084880}
-  - component: {fileID: 662084879}
+  - component: {fileID: 662084881}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -361,20 +366,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &662084879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662084878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed774d839ea255e4c8949121f3511dad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gamePos: {fileID: 236676179}
-  playerPos: {fileID: 885194007}
 --- !u!4 &662084880
 Transform:
   m_ObjectHideFlags: 0
@@ -393,6 +384,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &662084881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662084878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1beee3cb5e24ea448e5cab8ff9ec4ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePos: {fileID: 236676179}
+  playerPos: {fileID: 885194007}
+  HandInterval: 3
+  HandIntervalRandomness: 7
+  MaxDistanceFromPlayer: 50
+  hand: {fileID: 1333533206396021579, guid: 828c95528e98bb34f83f8acdd46f3739, type: 3}
 --- !u!1 &885194006
 GameObject:
   m_ObjectHideFlags: 0
