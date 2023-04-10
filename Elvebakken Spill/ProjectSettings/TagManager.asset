@@ -13,8 +13,8 @@ TagManager:
   - UI
   - Raycastable
   - Destroyable
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

@@ -67,6 +67,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Normal D\xF8r Variant"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bb25d4e16711c34d8718710431d7132,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233112405309087440, guid: 9bb25d4e16711c34d8718710431d7132,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252682845850649624, guid: 9bb25d4e16711c34d8718710431d7132,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bb25d4e16711c34d8718710431d7132, type: 3}
 --- !u!1 &4311246881469530960 stripped
