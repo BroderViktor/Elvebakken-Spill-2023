@@ -5,12 +5,17 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public Transform player;
+    public ParticleSystem[] particleSystems;
     public bool followPlayer;
 
     // Update is called once per frame
     void Update()
     {
         if (!followPlayer) return;
-        transform.position = new Vector3(player.position.x, transform.position.y, player.position.z);
+        foreach (ParticleSystem particle in particleSystems)
+        {
+            ParticleSystem.ShapeModule shapeModule = particle.shape;
+            shapeModule.position = new Vector3(player.position.x, 0, player.position.z);
+        }
     }
 }
