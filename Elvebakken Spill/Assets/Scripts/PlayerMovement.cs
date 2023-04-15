@@ -5,6 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
+    public AudioSource footsteps;
     CharacterController characterController;
 
     public float speed = 6.0f;
@@ -36,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
                 moveDirection.y = jumpSpeed;
             }
         }
-
         //rotate head on x-axis (Up and down)
         float XturnAmount = Input.GetAxis("Mouse Y") * Time.deltaTime * turnSensitivity;
         curEuler = Vector3.right * Mathf.Clamp(curEuler.x - XturnAmount, -90f, 90f);
@@ -52,6 +52,18 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
 
         // Move the controller
+        Vector3 movedir = Vector3Int.RoundToInt(new Vector3(moveDirection.x, moveDirection.y, moveDirection.z));
+        if (movedir.x != 0 && movedir.z != 0 && movedir.y == 0)
+        {
+            if (!footsteps.isPlaying)
+                footsteps.Play();
+
+        }
+        else
+        {
+            if (footsteps.isPlaying)
+                footsteps.Pause();
+        }
         characterController.Move(moveDirection * Time.deltaTime);
     }
 }

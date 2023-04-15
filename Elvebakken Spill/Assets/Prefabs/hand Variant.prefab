@@ -105,5 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fa98f64e96b3545a682f739c271708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeAttack: 5
-  timeBeforeAttackRandomness: 3
+  maxDistanceFromPlayer: 0
+  timeBeforeAttack: 4
+  timeBeforeAttackRandomness: 2

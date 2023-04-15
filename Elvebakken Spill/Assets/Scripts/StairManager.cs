@@ -5,7 +5,7 @@ using UnityEngine;
 public class StairManager : GameManager
 {
     public GameObject Mover;
-    public GameObject CurrentStairSpawn;
+    public GameObject[] CurrentStairSpawn;
     public bool spawning;
     public float spawnInterval;
     Coroutine spawner;
@@ -13,7 +13,7 @@ public class StairManager : GameManager
     public override void Start()
     {
         base.Start();
-
+        StartSpawning();
     }
     public void StartSpawning()
     {
@@ -23,7 +23,6 @@ public class StairManager : GameManager
     public void StopSpawning()
     {
         print("stoppedSpawning");
-
         StopCoroutine(spawner);
     }
     IEnumerator Spawner()
@@ -31,10 +30,14 @@ public class StairManager : GameManager
         for (; ; )
         {
             yield return new WaitForSecondsRealtime(spawnInterval);
-            if (Random.value > 0.5f)
-                Instantiate(Mover, CurrentStairSpawn.transform.position + spawnPositionOffset, CurrentStairSpawn.transform.rotation, transform);
-            else
-                Instantiate(Mover, CurrentStairSpawn.transform.position - spawnPositionOffset, CurrentStairSpawn.transform.rotation, transform);
+            foreach (GameObject currentStair in CurrentStairSpawn)
+            {
+                if (Random.value > 0.5f)
+                    Instantiate(Mover, currentStair.transform.position + spawnPositionOffset, currentStair.transform.rotation, transform);
+                else
+                    Instantiate(Mover, currentStair.transform.position - spawnPositionOffset, currentStair.transform.rotation, transform);
+
+            }
         }
     }
 }

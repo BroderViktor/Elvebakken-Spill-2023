@@ -17,7 +17,7 @@ public class StairLevelTrigger : MonoBehaviour
         print("Enter " + other);
 
         if (gameManager.spawning) return;
-        gameManager.CurrentStairSpawn = spawnPos;
+        //gameManager.CurrentStairSpawn = spawnPos;
         gameManager.StartSpawning();
         gameManager.spawning = true;
     }
