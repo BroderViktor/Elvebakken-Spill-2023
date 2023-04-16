@@ -18,11 +18,10 @@ public class CameraRaycast : MonoBehaviour
             {
                 ob.OnInteract();
                 AudioSource audioSource = ob.gameObject.GetComponent<AudioSource>();
-                print(audioSource);
                 if (audioSource == null) return;
                 if (audioSource.clip == null) return;
 
-                audioPlayer.PlayOneShot(audioSource.clip);
+                audioPlayer.PlayOneShot(audioSource.clip, audioSource.volume);
                
             }
         }

@@ -9,11 +9,18 @@ public class ManagerIM : GameManager
     public float MaxDistanceFromPlayer;
     public GameObject hand;
     GameObject player;
+    AudioSource GlobalAudio;
+    AudioClip sceneAudio;
     public override void Start()
     {
         base.Start();
         player = FindObjectOfType<PlayerMovement>().gameObject;
-        
+        foreach (AudioSource source in Resources.FindObjectsOfTypeAll<AudioSource>())
+        {
+            if (source.tag == "GlobalAudio") GlobalAudio = source;
+        }
+
+        GlobalAudio.clip = sceneAudio;
     }
     public void StartSpawning()
     {

@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class HandScript : MonoBehaviour
 {
-    GameObject player;
     public float maxDistanceFromPlayer;
     public float timeBeforeAttack;
     public float timeBeforeAttackRandomness;
     void Start()
     {
-        player = FindObjectOfType<PlayerMovement>().gameObject;
         StartCoroutine(Attack());
     }
     private void Update()
