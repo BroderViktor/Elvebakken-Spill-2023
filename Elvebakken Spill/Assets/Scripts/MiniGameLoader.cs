@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MiniGameLoader : Interactable
 {
+    public AudioSource doorOpen;
     public string[] ScenesToLoad;
     public string[] ScenesToUnload;
     public void LoadScene()
     {
-        print("load");
         foreach (string s in ScenesToLoad)
             SceneManager.LoadScene(s, LoadSceneMode.Additive);
         foreach (string s in ScenesToUnload)

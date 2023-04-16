@@ -13,6 +13,10 @@ public class ManagerIM : GameManager
     {
         base.Start();
         player = FindObjectOfType<PlayerMovement>().gameObject;
+        
+    }
+    public void StartSpawning()
+    {
         StartCoroutine(HandSpawner());
     }
     IEnumerator HandSpawner()
