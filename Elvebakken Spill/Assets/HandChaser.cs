@@ -5,6 +5,7 @@ using UnityEngine;
 public class HandChaser : MonoBehaviour
 {
     public GameObject player;
+    public LayerMask playerMask;
     public float speed;
     void Start()
     {
@@ -16,5 +17,12 @@ public class HandChaser : MonoBehaviour
     void FixedUpdate()
     {
         transform.position += transform.forward * speed;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!(playerMask.value == (1 << other.gameObject.layer))) return;
+        print("døde");
+        Destroy(gameObject);
     }
 }

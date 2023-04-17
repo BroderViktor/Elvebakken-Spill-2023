@@ -11,7 +11,10 @@ public class CapptureManager : GameManager
     public GameObject hand;
 
     public float spawnInterval;
+    public float spawnGrowth;
+
     public float TimeToCompletion;
+    float CurrentTime;
 
 
     public override void Start()
@@ -24,7 +27,7 @@ public class CapptureManager : GameManager
     // Update is called once per frame
     void Update()
     {
-        
+        CurrentTime = Time.time;
     }
 
     IEnumerator Spawner()
@@ -32,10 +35,11 @@ public class CapptureManager : GameManager
         for (; ; )
         {
             yield return new WaitForSecondsRealtime(spawnInterval);
+            spawnInterval /= spawnGrowth;
 
-            Vector3 spawnPos = (spawnPositionOffset * Random.value) - (spawnPositionOffset / 2);
-            print(spawnPos);
-            Instantiate(hand, spawnPos, Quaternion.identity, spawnPosition);
+            Vector3 spawnPos = spawnPosition.position + (spawnPositionOffset * Random.value) - (spawnPositionOffset / 2);
+            GameObject handClone = Instantiate(hand, spawnPosition);
+            handClone.transform.position = spawnPos;
         }
     }
 }

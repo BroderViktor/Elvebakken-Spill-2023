@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3485361178834766341
 Transform:
   m_ObjectHideFlags: 0
@@ -143,17 +143,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6679913a34496dc418e0c02587d01648,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6679913a34496dc418e0c02587d01648,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6679913a34496dc418e0c02587d01648,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6679913a34496dc418e0c02587d01648,
         type: 3}
@@ -223,19 +223,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2179954095272564250}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &8984850425453658649
-BoxCollider:
+--- !u!135 &1447664165661138468
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333533206396021579}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2989042, y: 2.675352, z: 8.4856415}
-  m_Center: {x: 0.00000005960464, y: 0.18822415, z: 3.242821}
+  m_Radius: 2.66
+  m_Center: {x: 0, y: 0, z: 1.97}
 --- !u!114 &7051355400250401797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +249,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 4
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  speed: 0.075
 --- !u!4 &1858431723488702961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6679913a34496dc418e0c02587d01648,
