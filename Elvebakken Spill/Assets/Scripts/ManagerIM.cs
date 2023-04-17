@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class ManagerIM : GameManager
 {
+    public bool isSpawning;
     public float HandInterval;
     public float HandIntervalRandomness;
     public float MaxDistanceFromPlayer;
     public GameObject hand;
+
     GameObject player;
     AudioSource GlobalAudio;
     AudioClip sceneAudio;
+
+    Coroutine spawning;
+
     public override void Start()
     {
         base.Start();
@@ -24,7 +29,15 @@ public class ManagerIM : GameManager
     }
     public void StartSpawning()
     {
-        StartCoroutine(HandSpawner());
+        if (isSpawning) return;
+        spawning = StartCoroutine(HandSpawner());
+        isSpawning = true;
+    }
+    public void StopSpawning()
+    {
+        if (!isSpawning) return;
+        StopCoroutine(spawning);
+        isSpawning = false;
     }
     IEnumerator HandSpawner()
     {
